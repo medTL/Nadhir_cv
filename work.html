@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JQSlider</title>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    <style>
+      body{
+	          font-family:"Arial",sans-serif;
+            width:100%;
+            height: 100%;
+            margin-top:0px;
+            background-color: #F6F2EC;
+}
+
+a{
+	color:#fff;
+	text-decoration: none;
+}
+
+h1{
+	text-align: center;
+}
+
+.container{
+  width:70%;
+  
+ margin-top: 40px;
+ align-self:center;
+ align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:auto;
+  margin-bottom: 150px;
+  align-self: center;
+  align-content: center;
+}
+
+
+.slider-inner{
+	width:90%;
+	height:30%;
+	position:relative;
+	overflow:hidden;
+	float:left;
+	padding:3px;
+	border:#666 solid 1px;
+}
+
+.slider-inner img{
+	display:none;
+	width:100%;
+	height:50%;
+}
+
+.slider-inner img.active{
+	display:inline-block;
+}
+
+.prev,.next{
+	float:left;
+	margin-top:40%;
+	cursor: pointer;
+}
+
+.prev{
+	position:relative;
+	margin-right:-45px;
+	z-index:100;
+}
+
+.next{
+	position:relative;
+	margin-left:-45px;
+	z-index:100;
+}
+nav{
+            width: 80%;
+            height: 80px;
+            margin-left:auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: 24px;
+            color: #ffffff;
+            background-color:#0E140D;
+            display: block;
+            box-shadow: 0 10px 10px -2px rgba(0,0,0,.5);
+}
+#navigation{
+  position:relative;
+            left:50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+           
+        }
+        a{
+        text-decoration: none;
+        color: #ffff;
+       }
+       nav ul li {
+            
+            display: inline;
+            padding: 5px;
+            margin-right: 5px;
+        }
+        #header{
+           
+           width:80%;
+           height: 120px;
+           margin-left:auto;
+           margin-right: auto;
+           margin-top:0px;
+           margin-bottom: 0px;
+           background-image:url(nadhir4.jpg);
+           background-size: 100%;
+           background-repeat: no-repeat;
+
+       }
+       #doc{
+        width: 80%;
+            height: 100%;
+            margin-left:auto;
+            margin-right: auto;
+            margin-top:0px;
+            background-color: #ffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+       }
+
+       @keyframes uptrans{
+            from{ 
+      
+                     transform: translateY(-100px);
+                    
+                }
+            to{ 
+                transform: translateY(0px);
+                
+                transform-origin:100% ;
+                }
+         }
+         @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        #header{
+            animation-name: uptrans;
+            animation-duration: 2s;
+         }
+         #navigation{
+            animation-name: fadein;
+            animation-duration: 2s;
+            
+         }
+         footer{
+            width: 100%;
+            background-color: #222;
+            padding: 60px 0px;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top: 5px;
+            margin-bottom: 0px;
+           
+        }
+        .s-m{
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-10%, -10%);
+
+        }
+        .s-m a{
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            background-color: #E6F3F1  ;
+            color: #222;
+            border-radius: 50%;
+            justify-content: center;
+            margin:0 6px;
+            align-items: center;
+
+        }
+        #footinfo{
+            width: 50%;
+            height: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(1,40px);
+            color:#ffff;
+            margin-left:auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            align-content: center;
+            align-self: center;
+
+
+        }
+        @media screen and (max-width:1068px){
+            .wrapper{
+             display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(2,360px)
+            }
+
+            #footinfo {
+                width: 80%;
+                margin-left:auto;
+                margin-right:auto;
+                align-self:center;
+                align-content: center;
+                
+               
+            }
+            #footinfo p{
+                text-align: center;
+                word-wrap: break-word;
+            }
+            .s-m{
+                left:46%;
+                
+            }
+            #header{
+              height: 80px;
+            }
+
+        }
+        @media screen and (max-width:800px){
+            .wrapper{
+                display: grid;
+                grid-template-columns: repeat(1, 100%);
+            grid-template-rows: repeat(4,360px)
+
+            }
+            #header{
+              height: 60px;
+            }
+            #footinfo p{
+                text-align: center;
+                word-wrap: break-word;
+            }
+        }
+        @media screen and (max-width:650px){
+            #footinfo{
+                word-wrap: break-word;
+            }
+            .s-m{
+                left:40%
+            }
+            p{
+                font-size: 14px;
+            }
+            nav{
+                font-size: 20px;
+            }
+            #navigation{
+              left:42%;
+            }
+            #header{
+              height: 40px;
+            }
+            .container{
+              width: 100%;
+          
+              
+            }
+            #footinfo{
+                display: grid;
+                grid-template-columns: repeat(1, 100%);
+            grid-template-rows: repeat(2,90%);
+            margin-bottom: 50px;
+            
+
+            }
+            .s-m{
+              left: 32%;
+            }
+        }
+        @media screen and (max-width:450px){
+            .s-m{
+                left:30%;
+            }
+            #footinfo{
+                display: grid;
+                grid-template-columns: repeat(1, 100%);
+            grid-template-rows: repeat(2,90%);
+            margin-bottom: 50px;
+            
+
+            }
+            #header{
+                height: 20px;
+            }
+            #navigation{
+                left:42%
+            }
+            .container{
+              width: 100%;
+          
+              
+            }
+           
+        }
+    </style>
+  </head>
+  <body>
+    <div id="doc">
+      <header>
+          <div id="header">
+             
+       
+            </div>
+      
+    <nav>
+        <div id="navigation">
+        <ul>
+            <li>
+                <a href="index.html">About</a>
+            </li>
+            <li>
+                <a href="work.html">Work</a>
+            </li>
+            <li>
+                <a href="#footinfo">Contact</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+ 
+  </header>
+  
+    <div class="container">
+    
+      <div class="slider-outer">
+        <img src="img/arrow-left.png" class="prev" alt="Prev">
+        <div class="slider-inner">
+          <img src="img/image0.jpg" class="active">
+          <img src="img/image1.jpg">
+          <img src="img/image2.jpg">
+          <img src="img/image3.jpg">
+          <img src="img/image4.jpg">
+          <img src="img/image5.jpg">
+          <img src="img/image5.jpg">
+          <img src="img/image6.jpg">
+          <img src="img/image7.jpg">
+          <img src="img/image8.jpg">
+          <img src="img/image9.jpg">
+          <img src="img/image10.jpg">
+          <img src="img/image11.jpg">
+          <img src="img/image12.jpg">
+          <img src="img/image13.jpg">
+          <img src="img/image14.jpg">
+          <img src="img/image15.jpg">
+          <img src="img/image16.jpg">
+          <img src="img/image17.jpg">
+          <img src="img/image18.jpg">
+          <img src="img/image19.jpg">
+          <img src="img/image20.jpg">
+          <img src="img/image21.jpg">
+          <img src="img/image22.jpg">
+          <img src="img/image23.jpg">
+          <img src="img/image24.jpg">
+          <img src="img/image25.jpg">
+          <img src="img/image26.jpg">
+          <img src="img/image27.jpg">
+          <img src="img/image28.jpg">
+          <img src="img/image29.jpg">
+          <img src="img/image30.jpg">
+          <img src="img/image31.jpg">
+          <img src="img/image32.jpg">
+          <img src="img/image33.jpg">
+          <img src="img/image34.jpg">
+          <img src="img/image35.jpg">
+          <img src="img/image36.jpg">
+          <img src="img/image37.jpg">
+          <img src="img/image38.jpg">
+          <img src="img/image39.jpg">
+          
+          
+          
+        </div>
+        <img src="img/arrow-right.png" class="next" alt="Next">
+      </div>
+    </div>
+    <footer>
+        <div id="footinfo"> 
+        <p>email:Nadhirbenali8@gmail.com</p>
+        <p>phone:+216 54626943</p>
+        </div>
+
+        <div class="s-m">
+            <a href="https://www.facebook.com/nadhir.sergioiii"> <i class="fab fa-facebook-f"></i> </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Nadhirbenali8@gmail.com"> <i class="fab fa-google-plus-g"></i> </a>
+            <a href="https://wa.me/+216 27976182"> <i class="fab fa-whatsapp"></i> </a>
+        </div>
+
+    </footer>
+  </div>
+    <script>
+      $(document).ready(function(){
+  $('.next').on('click', function(){
+    var currentImg = $('.active');
+    var nextImg = currentImg.next();
+
+    if(nextImg.length){
+      currentImg.removeClass('active').css('z-index', -10);
+      nextImg.addClass('active').css('z-index', 10);
+    }
+  });
+
+  $('.prev').on('click', function(){
+    var currentImg = $('.active');
+    var prevImg = currentImg.prev();
+
+    if(prevImg.length){
+      currentImg.removeClass('active').css('z-index', -10);
+      prevImg.addClass('active').css('z-index', 10);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nadhir</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        body{
+            width:100%;
+            
+            height: 100%;
+            margin-top:0px;
+            background-color: #F6F2EC;
+            font-family: pp-sans-small-regular,Helvetica Neue,Arial,sans-serif
+            
+        }
+        nav{
+            width: 80%;
+            height: 80px;
+            margin-left:auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: 24px;
+            color: #ffffff;
+            background-color:#0E140D;
+            display: block;
+            box-shadow: 0 10px 10px -2px rgba(0,0,0,.5);
+
+            
+        }
+        #navigation{
+            position:relative;
+            left:50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+           
+        }
+       a{
+        text-decoration: none;
+        color: #ffff;
+       }
+       nav ul li {
+            
+            display: inline;
+            padding: 5px;
+            margin-right: 5px;
+        }
+        #doc{
+            
+            z-index: 1;
+            width: 80%;
+            height: 100%;
+            margin-left:auto;
+            margin-right: auto;
+            margin-top:0px;
+            background-color: #ffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+
+        }
+         #header{
+           
+             width:80%;
+             height: 120px;
+             margin-left:auto;
+             margin-right: auto;
+             margin-top:0px;
+             margin-bottom: 0px;
+             background-image:url(nadhir4.jpg);
+             background-size: 100%;
+             background-repeat: no-repeat;
+
+         }
+         #content{
+             width:75%;
+             height: 100%;
+             margin-left:auto;
+             margin-right:auto;
+         }
+         #title{
+             margin: 10px;
+            font-family: pp-sans-big-light,Helvetica Neue,Arial,sans-serif;
+            font-size: 16px;
+            
+            
+         }
+        #line{
+            width: 20%;
+            height: 10px;
+            background-color: black;
+        }
+        .wrapper{
+            margin-top:100px;
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(2,300px)
+           
+        }
+        
+         p{
+             font-size: 17px;
+             font-family: pp-sans-small-regular,Helvetica Neue,Arial,sans-serif
+             
+         }
+         #image{
+             position:absolute;
+             
+             width: 150px;
+             height: 150px;
+             border: 1px black;
+             background-image: url(gg.png);
+             background-repeat: no-repeat;
+             right: 300px;
+         }
+         @keyframes lefttrans{
+            from{ 
+      
+                     transform: translate(-400px);
+                }
+            to{ 
+                transform: translate(0px);
+                transform-origin:100% 0%;
+                }
+         }
+         @keyframes righttrans{
+            from{ 
+      
+                     transform: translate(+500px);
+                }
+            to{ 
+                transform: translate(0px);
+                transform-origin:100% 0%;
+                }
+         }
+         @keyframes righttrans{
+            from{ 
+      
+                     transform: translate(+300px);
+                }
+            to{ 
+                transform: translate(0px);
+                transform-origin:100% 0%;
+                }
+         }
+         @keyframes uptrans{
+            from{ 
+      
+                     transform: translateY(-100px);
+                    
+                }
+            to{ 
+                transform: translateY(0px);
+                
+                transform-origin:100% ;
+                }
+         }
+         @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+         #title1{
+            animation-name: lefttrans;
+            animation-duration: 2s;
+         }
+         .box1{
+            animation-name: lefttrans;
+            animation-duration: 2s;
+         }
+         .box3{
+            animation-name: lefttrans;
+            animation-duration: 2s;
+         }
+         .box2{
+            animation-name: righttrans;
+            animation-duration: 2s;
+         }
+         .box4{
+            animation-name: righttrans;
+            animation-duration: 2s;
+         }
+         #header{
+            animation-name: uptrans;
+            animation-duration: 2s;
+         }
+         #navigation{
+            animation-name: fadein;
+            animation-duration: 2s;
+            
+         }
+         p{
+             text-align: justify;
+             padding: 5px;
+             font-size: 14px;
+         }
+         .box1 , .box3, .box2 , .box4{
+           
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+        }
+        footer{
+            width: 100%;
+            background-color: #222;
+            padding: 60px 0px;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top: 5px;
+            margin-bottom: 0px;
+           
+        }
+        .s-m{
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-10%, -10%);
+
+        }
+        .s-m a{
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            background-color: #E6F3F1  ;
+            color: #222;
+            border-radius: 50%;
+            justify-content: center;
+            margin:0 6px;
+            align-items: center;
+
+        }
+        #footinfo{
+            width: 50%;
+            height: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(1,40px);
+            color:#ffff;
+            margin-left:auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            align-content: center;
+            align-self: center;
+
+
+        }
+        @media screen and (max-width:1068px){
+            .wrapper{
+             display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(2,360px)
+            }
+
+            #footinfo {
+                width: 80%;
+                margin-left:auto;
+                margin-right:auto;
+                align-self:center;
+                align-content: center;
+               
+            }
+            #footinfo p{
+                text-align: center;
+            }
+            .s-m{
+                left:46%;
+                
+            }
+
+        }
+        @media screen and (max-width:800px){
+            .wrapper{
+                display: grid;
+                grid-template-columns: repeat(1, 100%);
+            grid-template-rows: repeat(4,360px)
+
+            }
+        }
+        @media screen and (max-width:650px){
+            #footinfo{
+                word-wrap: break-word;
+            }
+            .s-m{
+                left:40%
+            }
+            p{
+                font-size: 14px;
+            }
+            nav{
+                font-size: 20px;
+            }
+            #header{
+              height: 40px;
+            }
+            #footinfo{
+                display: grid;
+                grid-template-columns: repeat(1, 100%);
+            grid-template-rows: repeat(2,90%);
+            margin-bottom: 50px;
+            
+
+            }
+        }
+        @media screen and (max-width:450px){
+            .s-m{
+                left:30%;
+            }
+            #footinfo{
+                display: grid;
+                grid-template-columns: repeat(1, 100%);
+            grid-template-rows: repeat(2,90%);
+            margin-bottom: 50px;
+            
+
+            }
+            #header{
+                height: 40px;
+            }
+            #navigation{
+                left:42%
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="doc">
+    <header>
+        <div id="header">
+           
+        </div>
+  
+    
+  <nav>
+      <div id="navigation">
+      <ul>
+          <li>
+              <a href="index.html">About</a>
+          </li>
+          <li>
+              <a href="work.html">Work</a>
+          </li>
+          <li>
+              <a href="#footinfo">Contact</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <div id="content">
+      <div id="image">
+          
+      </div>
+        <div id="title1">
+        <h1>
+            Resume
+        </h1>
+        <div id="line"></div>
+    </div>
+    <div class="wrapper">
+            <div class="box1">
+                    <div id="title">
+                            <h1>
+                                Professional summary
+                            </h1>
+                            <div id="line"></div>
+                            <p>Energetic chef assistant  who excels in creating inspired hot and cold baked goods in an ever-changing fast-paced environment. Exceptional knowledge of all food products culinary applications kitchen equipment and baking techniques.</p>
+            </div>
+        </div>
+            <div class="box2">   
+                    <div id="title">
+                    <h1>
+                       Education
+                    </h1>
+                    <div id="line"></div></div>
+                    <p>Diploma of Vocational Technician in Pastry, Vocational training center of Megrine, Ben arous, Tunisia</p>
+                </div>
+            <div class="box3">       <div id="title">
+                    <h1>
+                       Exprience
+                    </h1>
+                    <div id="line"></div>
+                    <p>5 years in Majestic pastry shop, Megrine, Ben arous, Tunisia</p>
+            </div>
+            </div>
+            <div class="box4">  
+                     <div id="title">
+                    <h1>
+                        Skill
+                    </h1>
+                    <div id="line"></div>
+                    <ul>
+                        <li>	Menu knowledge</li>
+                        <li>	High volume production</li>
+                        <li>	Wide range of cooking techniques</li>
+                        <li>	Kitchen and appliance maintenance</li>
+                        <li>	Advanced knife skills</li>
+                        <li>	Food quality control</li>
+                        <li>	Food quality control</li>
+                        <li>	Supply management</li>
+                      
+                    </ul>
+             </div>
+        </div>
+
+    </div>
+    </div>
+    
+    <footer>
+        <div id="footinfo"> 
+        <p>email:Nadhirbenali8@gmail.com</p>
+        <p>phone:+216 54626943</p>
+        </div>
+
+        <div class="s-m">
+            <a href="https://www.facebook.com/nadhir.sergioiii"> <i class="fab fa-facebook-f"></i> </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Nadhirbenali8@gmail.com"> <i class="fab fa-google-plus-g"></i> </a>
+            <a href="https://wa.me/+216 27976182"> <i class="fab fa-whatsapp"></i> </a>
+        </div>
+
+    </footer>
+</div>
+
+</body>
+</html>
