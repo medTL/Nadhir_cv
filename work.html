@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JQSlider</title>
+    <title>My Work</title>
     
     <script
   src="https://code.jquery.com/jquery-3.1.1.js"
@@ -10,10 +10,22 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
     <style>
+      html{
+       
+        margin: 0px;
+        align-content: center;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        
+      }
       body{
+            
 	          font-family:"Arial",sans-serif;
             width:100%;
             height: 100%;
+            align-self: center;
+            margin-left:auto;
+            margin-right: auto;
             margin-top:0px;
             background-color: #F6F2EC;
 }
@@ -28,53 +40,65 @@ h1{
 }
 
 .container{
-  width:70%;
+  width:100%;
   
+   
  margin-top: 40px;
  align-self:center;
  align-content: center;
   margin-left: auto;
   margin-right: auto;
-  overflow:auto;
+ 
   margin-bottom: 150px;
   align-self: center;
   align-content: center;
 }
+.slider-outer{
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+            grid-template-rows: 400px;
+            align-content: center;
+          
 
+
+}
 
 .slider-inner{
-	width:90%;
-	height:30%;
-	position:relative;
-	overflow:hidden;
-	float:left;
-	padding:3px;
-	border:#666 solid 1px;
+	width:100%;
+	height: 100%;
+  align-self:center;
+  margin:auto;
+
+
+  border:#666 solid 1px;
+  background-image: url(img/image0.jpg);
+  background-size: contain;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-.slider-inner img{
-	display:none;
-	width:100%;
-	height:50%;
-}
+
 
 .slider-inner img.active{
 	display:inline-block;
 }
 
 .prev,.next{
-	float:left;
+	
 	margin-top:40%;
 	cursor: pointer;
 }
 
 .prev{
+  align-self: center;
 	position:relative;
-	margin-right:-45px;
+  left:80%;
 	z-index:100;
+  float:right;
 }
 
 .next{
+  align-self: center;
 	position:relative;
 	margin-left:-45px;
 	z-index:100;
@@ -122,6 +146,7 @@ nav{
 
        }
        #doc{
+         align-self:center;
         width: 80%;
             height: 100%;
             margin-left:auto;
@@ -293,7 +318,7 @@ nav{
 
             }
             #header{
-                height: 20px;
+                height: 35px;
             }
             #navigation{
                 left:42%
@@ -304,6 +329,34 @@ nav{
               
             }
            
+        }
+        @media screen and (max-width:400px){
+          .container{
+            margin-bottom: 50px;
+            width: 100%;
+          }
+          #doc{
+            width: 100%;
+          }
+          .prev {
+            width: 50px;
+          }
+          .next {
+            width: 50px;
+          }
+          #navigation{
+            font-size: 10px;
+            width: 100%;
+            font-weight: bold;
+          }
+          nav{
+            height: 50px;
+          }
+          #header{
+            height: 50px;
+          }
+
+          
         }
     </style>
   </head>
@@ -336,54 +389,15 @@ nav{
     <div class="container">
     
       <div class="slider-outer">
-        <img src="img/arrow-left.png" class="prev" alt="Prev">
+        <img src="img/arrow-left.png" class="prev" id="prev" alt="Prev">
         <div class="slider-inner">
-          <img src="img/image0.jpg" class="active">
-          <img src="img/image1.jpg">
-          <img src="img/image2.jpg">
-          <img src="img/image3.jpg">
-          <img src="img/image4.jpg">
-          <img src="img/image5.jpg">
-          <img src="img/image5.jpg">
-          <img src="img/image6.jpg">
-          <img src="img/image7.jpg">
-          <img src="img/image8.jpg">
-          <img src="img/image9.jpg">
-          <img src="img/image10.jpg">
-          <img src="img/image11.jpg">
-          <img src="img/image12.jpg">
-          <img src="img/image13.jpg">
-          <img src="img/image14.jpg">
-          <img src="img/image15.jpg">
-          <img src="img/image16.jpg">
-          <img src="img/image17.jpg">
-          <img src="img/image18.jpg">
-          <img src="img/image19.jpg">
-          <img src="img/image20.jpg">
-          <img src="img/image21.jpg">
-          <img src="img/image22.jpg">
-          <img src="img/image23.jpg">
-          <img src="img/image24.jpg">
-          <img src="img/image25.jpg">
-          <img src="img/image26.jpg">
-          <img src="img/image27.jpg">
-          <img src="img/image28.jpg">
-          <img src="img/image29.jpg">
-          <img src="img/image30.jpg">
-          <img src="img/image31.jpg">
-          <img src="img/image32.jpg">
-          <img src="img/image33.jpg">
-          <img src="img/image34.jpg">
-          <img src="img/image35.jpg">
-          <img src="img/image36.jpg">
-          <img src="img/image37.jpg">
-          <img src="img/image38.jpg">
-          <img src="img/image39.jpg">
+         
+         
           
           
           
         </div>
-        <img src="img/arrow-right.png" class="next" alt="Next">
+        <img src="img/arrow-right.png" class="next" id="next" alt="Next">
       </div>
     </div>
     <footer>
@@ -401,26 +415,26 @@ nav{
     </footer>
   </div>
     <script>
-      $(document).ready(function(){
-  $('.next').on('click', function(){
-    var currentImg = $('.active');
-    var nextImg = currentImg.next();
-
-    if(nextImg.length){
-      currentImg.removeClass('active').css('z-index', -10);
-      nextImg.addClass('active').css('z-index', 10);
-    }
-  });
-
-  $('.prev').on('click', function(){
-    var currentImg = $('.active');
-    var prevImg = currentImg.prev();
-
-    if(prevImg.length){
-      currentImg.removeClass('active').css('z-index', -10);
-      prevImg.addClass('active').css('z-index', 10);
-    }
-  });
+      let i=0;
+    $('#next').click(function()
+{
+   if(i==39){
+      return null;
+   }
+   i++; 
+    $('.slider-inner').css("background-image", "url(img/image"+i+".jpg)"); 
+   
+   
+});
+$('#prev').click(function()
+{
+  if(i==0 ){
+      return null;
+   }else{
+    i--; 
+    $('.slider-inner').css("background-image", "url(img/image"+i+".jpg)"); 
+   
+   }
 });
 
     </script>

@@ -9,7 +9,7 @@
     <style>
         body{
             width:100%;
-            
+
             height: 100%;
             margin-top:0px;
             background-color: #F6F2EC;
@@ -17,7 +17,7 @@
             
         }
         nav{
-            width: 80%;
+            width: 90%;
             height: 80px;
             margin-left:auto;
             margin-right: auto;
@@ -50,7 +50,7 @@
         #doc{
             
             z-index: 1;
-            width: 80%;
+            width: 90%;
             height: 100%;
             margin-left:auto;
             margin-right: auto;
@@ -106,12 +106,13 @@
          #image{
              position:absolute;
              
-             width: 150px;
-             height: 150px;
+             width: 200px;
+             height: 200px;
              border: 1px black;
              background-image: url(gg.png);
+             background-size: 100%;
              background-repeat: no-repeat;
-             right: 300px;
+             right: 20%;
          }
          @keyframes lefttrans{
             from{ 
@@ -318,6 +319,43 @@
             #navigation{
                 left:42%
             }
+        }
+        @media screen and (max-width:400px){
+          .container{
+            margin-bottom: 50px;
+          }
+          #doc{
+              width: 100%;
+          }
+          #image{
+              z-index: 100;
+              position: absolute;
+              width: 100px;
+              height: 100px;
+            left: 70%;
+              
+              
+          }
+          
+          .prev {
+            width: 50px;
+          }
+          .next {
+            width: 50px;
+          }
+          #navigation{
+            font-size: 10px;
+            width: 100%;
+            font-weight: bold;
+          }
+          nav{
+            height: 50px;
+          }
+          #content{
+              width:100%;
+          }
+
+          
         }
     </style>
 </head>
