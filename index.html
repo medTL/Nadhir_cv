@@ -322,6 +322,10 @@
             }
         }
         @media screen and (max-width:400px){
+            body{
+                padding: 0;
+                margin: 0;
+            }
           .container{
             margin-bottom: 50px;
           }
@@ -331,9 +335,9 @@
           #image{
               z-index: 100;
               position: absolute;
-              width: 100px;
-              height: 100px;
-            left: 70%;
+              width: 150px;
+              height: 150px;
+            left: 60%;
               
               
           }
@@ -345,11 +349,24 @@
             width: 50px;
           }
           #navigation{
-            font-size: 10px;
+              position: relative;
+            font-size: 16px;
+            align-content: center;
             width: 100%;
+            left:50%;
+            
             font-weight: bold;
           }
+          #title1{
+              
+              position: relative;
+              left:10%;
+          }
+          #navigation a{
+            margin-right: 30px;
+          }
           nav{
+              width: 90%;
             height: 50px;
           }
           #content{
